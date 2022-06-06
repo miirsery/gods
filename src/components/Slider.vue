@@ -8,7 +8,7 @@
             el: '.main-slider__fractions',
             type: 'custom',
             renderCustom: function (swiper, current, total) {
-              return `<span>${current}</span>` + '|' + `<span>${(total - 1)}</span>`
+              return `<span>${current}</span>` + '|' + `<span>${(total)}</span>`
              }
             }"
           :navigation="{
@@ -17,7 +17,7 @@
         }"
           class="main-slider swiper"
       >
-        <swiper-slide class="main-slider__slide">
+        <swiper-slide class="main-slider__slide fd-column">
           <div class="main-slider__slide-text">Название бога</div>
           <div class="main-slider__slide-video">
           <span>
@@ -26,33 +26,24 @@
             <img src="../assets/images/slide-1.jpg" alt="mugik">
           </div>
         </swiper-slide>
-        <swiper-slide class="main-slider__slide">
-          <div class="main-slider__slide-text">Название бога</div>
-          <div class="main-slider__slide-video">
-          <span>
-            Video
-          </span>
-            <img src="../assets/images/slide-1.jpg" alt="mugik">
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="swiper-slider__slide-text-italic">
+              Один Всеотец - <br> правитель Асгарда.
+            </div>
+            <div class="swiper-slider__slide-title">
+            <span>
+              Óðinn
+            </span>
+              <br>
+              Один является королем Эзиров, но Тор, пожалуй, самый почитаемый. Есть много интересных историй  о приключениях Тора, в то время как Один в основном изображается как странник в поисках мудрости и знаний.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/video-2.jpg" alt="strong mugik">
           </div>
         </swiper-slide>
-        <swiper-slide class="main-slider__slide">
-          <div class="main-slider__slide-text">Назваqwdqwdqwdqfние бога</div>
-          <div class="main-slider__slide-video">
-          <span>
-            Video
-          </span>
-            <img src="../assets/images/slide-1.jpg" alt="mugik">
-          </div>
-        </swiper-slide>
-        <swiper-slide class="main-slider__slide">
-          <div class="main-slider__slide-text">123 бога</div>
-          <div class="main-slider__slide-video">
-          <span>
-            Video
-          </span>
-            <img src="../assets/images/slide-1.jpg" alt="mugik">
-          </div>
-        </swiper-slide>
+
       </swiper>
       <div class="main-slider__arrows">
         <div class="main-slider__arrow-next"><span>Далее</span></div>
@@ -95,7 +86,6 @@ SwiperCore.use([Pagination, Navigation]);
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
@@ -110,7 +100,11 @@ SwiperCore.use([Pagination, Navigation]);
 
     &-video {
       max-width: 954px;
-      max-height: 650px;
+      height: 650px;
+
+      @media screen and (max-height: 670px) {
+        height: 400px;
+      }
 
       span {
         display: inline-flex;
@@ -118,6 +112,15 @@ SwiperCore.use([Pagination, Navigation]);
         justify-content: center;
       }
 
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 32px;
+        object-fit: cover;
+      }
+    }
+
+    &-video-small {
       img {
         width: 100%;
         height: 100%;
