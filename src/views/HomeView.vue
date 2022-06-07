@@ -20,15 +20,18 @@
 import {ref} from "vue";
 import Slider from '@/components/Slider'
 const isSlider = ref(false)
+import bgDark from '../assets/images/bg-dark.jpg'
 
 const handleStep = () => {
   isSlider.value = true
+  document.body.style.backgroundImage = `url('${bgDark}')`
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundSize = "cover";
 }
 </script>
 
 <style lang="scss">
 .home {
-  background: center/ cover no-repeat url('../assets/images/first-slide.jpg');
   height: 100vh;
 
   &__wrapper {
