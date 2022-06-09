@@ -1,6 +1,9 @@
 <template>
   <div class="question">
-    <h1 class="question__title">Вопрос1 тут прям тут</h1>
+    <div class="question__top">
+      <div class="question__fractions"> 1 | 12</div>
+      <h1 class="question__title">Вопрос1 тут прям тут</h1>
+    </div>
     <div class="question__items">
       <div class="question__item">
         <div class="question__number">1</div>

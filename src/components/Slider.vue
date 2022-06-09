@@ -202,7 +202,7 @@ SwiperCore.use([Pagination, Navigation]);
       max-width: 954px;
       height: 650px;
 
-      @media screen and (max-height: 670px) {
+      @media screen and (max-height: 840px) {
         height: 400px;
       }
 
