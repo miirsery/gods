@@ -2,7 +2,7 @@
   <div class="questions">
     <quest @choiceAnswerHandler="choiceAnswerHandler" :dataQuestion="questions[currentSlide]" :countQuestions="questions.length"/>
     <button v-if="currentSlide + 1 === questions.length" class="questions__button">
-      <router-link style="color: #FFFFFF;" to="result">Сдать работу</router-link>
+      <router-link style="color: #FFFFFF;" to="/results">Сдать работу</router-link>
     </button>
     <button v-else class="questions__button" @click="handleToggleSlide">Продолжить</button>
   </div>
@@ -149,7 +149,7 @@ export default defineComponent({
   height: 100%;
   &__button {
     position: absolute;
-    bottom: 10%;
+    bottom: 2%;
     left: 50%;
     width: 450px;
     height: 85px;

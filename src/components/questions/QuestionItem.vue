@@ -28,7 +28,6 @@ export default {
 
   watch: {
     choiceItem(newValue) {
-      console.log(newValue)
       this.active = newValue === this.ask.id;
     }
   }

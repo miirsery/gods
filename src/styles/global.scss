@@ -1,12 +1,15 @@
+*, *::after, *::before {
+  font-family: 'Rubik', sans-serif;
+}
+
 body {
-  background: center/ cover no-repeat url('../assets/images/first-slide.jpg');
+  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(90deg, #616161, #90B0AF);
   min-height: 100vh;
 }
 
 .container {
-  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 15px;
 }
 
 .d-flex {
@@ -27,6 +30,34 @@ body {
 
 .fd-row {
   flex-direction: row !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.h-50 {
+  height: 50% !important;
+}
+
+.ta-center {
+  text-align: center !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #FEFEFE;
+}
+
+.mb-resp-80 {
+  margin-bottom: clamp(30px, 4vh, 80px);
+}
+
+.mt-resp-80 {
+  margin-top: clamp(30px, 4vh, 80px);
+}
+
+.pb-resp-80 {
+  padding-bottom: clamp(30px, 4vh, 80px);
 }
 
 .question {

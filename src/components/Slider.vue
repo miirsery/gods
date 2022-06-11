@@ -8,9 +8,7 @@
           :pagination="{
             el: '.main-slider__fractions',
             type: 'custom',
-            renderCustom: function (swiper, current, total) {
-              return `<span>${current}</span>` + '|' + `<span>${(total)}</span>`
-             }
+            renderCustom: renderFraction
             }"
           :navigation="{
           nextEl: '.main-slider__arrow-next',
@@ -119,8 +117,19 @@
         </swiper-slide>
       </swiper>
       <div class="main-slider__arrows">
-        <div class="main-slider__arrow-next"><span>Далее</span></div>
-        <div class="main-slider__arrow-prev"><span>Назад</span></div>
+        <router-link to="/questions" class="main-slider__questions" v-show="currentSlide === lastSlide">К викторине</router-link>
+        <div class="main-slider__arrow-next" v-show="currentSlide !== lastSlide"><span>Далее</span></div>
+        <div class="main-slider__arrow-prev" v-show="currentSlide !== 1"><span>Назад</span></div>
+        <button
+            v-show="currentSlide === 1"
+            class="main-slider__arrow-prev"
+            type="button"
+            @click="handleReturnToHome"
+        >
+          <span>
+            Назад
+          </span>
+        </button>
       </div>
       <div class="main-slider__fractions"></div>
     </div>
@@ -133,8 +142,26 @@ import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import SwiperCore, { Pagination, Navigation } from "swiper";
+import {ref} from "vue";
 
 SwiperCore.use([Pagination, Navigation]);
+const lastSlide = ref(null)
+const currentSlide = ref(null)
+
+const emit = defineEmits([
+  'returnToHome'
+])
+
+const handleReturnToHome = () => {
+  emit('returnToHome')
+}
+
+const renderFraction = (swiper, current, total) => {
+  lastSlide.value = total
+  currentSlide.value = current
+  return `<span>${current}</span>` + '|' + `<span>${(total)}</span>`
+}
+
 </script>
 <style lang="scss">
 .slider {
@@ -152,10 +179,41 @@ SwiperCore.use([Pagination, Navigation]);
     justify-content: center;
     height: 100%;
     padding-bottom: 60px;
-    width: 100%;
   }
 }
 .main-slider {
+  &__return {
+    right: 20%;
+    position: absolute;
+    bottom: 2.7%;
+    z-index: 10;
+    cursor: pointer;
+    font-weight: 400;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    color: #FEFEFE;
+  }
+
+  .swiper-wrapper {
+    padding: 0 30px;
+  }
+
+  &__questions {
+    cursor: pointer;
+    font-weight: 400;
+    display: inline-block;
+    position: absolute;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    color: #FEFEFE;
+    right: 5%;
+    bottom: 2.6%;
+    z-index: 10;
+  }
+
   &__slide {
     width: 100%;
     height: 100%;
@@ -163,13 +221,14 @@ SwiperCore.use([Pagination, Navigation]);
     align-content: center;
     justify-content: center;
     align-items: center;
+    padding: 0 90px;
 
     &-text {
       font-size: 40px;
       line-height: 130%;
       letter-spacing: 0.05em;
       color: #FFFFFF;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
 
       &-italic {
         font-style: italic;
@@ -252,7 +311,7 @@ SwiperCore.use([Pagination, Navigation]);
   }
 
   &__arrow-prev{
-    right: 15%;
+    right: 20%;
     position: absolute;
     bottom: 2%;
 
@@ -276,7 +335,7 @@ SwiperCore.use([Pagination, Navigation]);
   &__arrow-next {
     position: absolute;
     bottom: 2%;
-    right: 0;
+    right: 5%;
 
     span {
       left: -37px;
@@ -320,12 +379,25 @@ SwiperCore.use([Pagination, Navigation]);
   }
 }
 .frigga {
-  height: 100vh;
+  height: 100%;
   overflow-y: auto;
   &__wrapper {
     position: relative;
-    max-width: 90%;
+    max-width: 70%;
     margin: 0 auto;
+
+    @media screen and (max-height: 840px) {
+      max-width: 56%;
+    }
+
+    @media screen and (max-height: 840px) and (max-width: 1440px){
+      max-width: 56%;
+    }
+
+    @media screen and  (max-width: 1366px){
+      max-width: 65%;
+    }
+
   }
 
   &__title {
@@ -335,9 +407,13 @@ SwiperCore.use([Pagination, Navigation]);
   }
 
   &__slide {
-    width: 360px;
+    height: 400px;
+    @media screen and (max-height: 840px) {
+      height: 300px;
+    }
     img {
-      width: 100%;
+      height: 100%;
+      object-fit: cover;
       border-radius: 38px;
     }
   }

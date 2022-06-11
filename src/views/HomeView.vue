@@ -11,7 +11,7 @@
           <img src="../assets/images/horse.jpg" alt="horse">
         </div>
       </div>
-      <slider v-else />
+      <slider @returnToHome="handleStep" v-else />
     </div>
   </div>
 </template>
@@ -23,10 +23,7 @@ const isSlider = ref(false)
 import bgDark from '../assets/images/bg-dark.jpg'
 
 const handleStep = () => {
-  isSlider.value = true
-  document.body.style.backgroundImage = `url('${bgDark}')`
-  document.body.style.backgroundRepeat = "no-repeat";
-  document.body.style.backgroundSize = "cover";
+  isSlider.value = !isSlider.value
 }
 </script>
 
@@ -45,6 +42,10 @@ const handleStep = () => {
     display: flex;
     align-content: center;
     justify-content: space-between;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
   }
 
   &__left {
