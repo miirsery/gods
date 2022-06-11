@@ -47,6 +47,10 @@ body {
     position: relative;
     transition: ease-in-out filter 0.15s;
 
+    &.active {
+        filter: brightness(0.7);
+    }
+
     &:not(:last-child) {
       margin-right: 20px;
     }

@@ -152,6 +152,7 @@ SwiperCore.use([Pagination, Navigation]);
     justify-content: center;
     height: 100%;
     padding-bottom: 60px;
+    width: 100%;
   }
 }
 .main-slider {

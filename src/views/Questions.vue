@@ -1,19 +1,19 @@
 <template>
   <div class="questions">
-    <keep-alive>
-      <component :is="currentSlideData" />
-    </keep-alive>
-    <button class="questions__button" @click="handleToggleSlide">Продолжить</button>
+    <quest @choiceAnswerHandler="choiceAnswerHandler" :dataQuestion="questions[currentSlide]" :countQuestions="questions.length"/>
+    <button v-if="currentSlide + 1 === questions.length" class="questions__button">
+      <router-link style="color: #FFFFFF;" to="result">Сдать работу</router-link>
+    </button>
+    <button v-else class="questions__button" @click="handleToggleSlide">Продолжить</button>
   </div>
+  {{questions.length}} {{currentSlide}}
 </template>
-<script>
-import {defineAsyncComponent, defineComponent, ref} from "vue";
 
+<script>
+import {defineAsyncComponent, defineComponent, reactive, ref} from "vue";
 export default defineComponent({
   components: {
-    quest0: defineAsyncComponent(() => import(`@/components/questions/quest0.vue`)),
-    quest1: defineAsyncComponent(() => import(`@/components/questions/quest1.vue`)),
-    quest2: defineAsyncComponent(() => import(`@/components/questions/quest2.vue`))
+    quest: defineAsyncComponent(() => import(`@/components/questions/Quest.vue`)),
   },
 
   setup() {
@@ -30,7 +30,7 @@ export default defineComponent({
           },
           {
             id: 2,
-            value: 'Какой-то ответ 2',
+            value: 'Какой-то ответ 2!',
             correct: false,
           },
           {
@@ -101,17 +101,43 @@ export default defineComponent({
       }
     ]
 
-    const currenSlide = ref(0)
-    const currentSlideData = ref('quest0')
+    const currentSlide = ref(0)
+    const currentSlideData = questions[currentSlide]
+    let choiceAnswer = null
+    let numberOfCorrectAnswers = 0
+    let isCorrectAnswers = false
 
     const handleToggleSlide = () => {
-      currenSlide.value++
+      if (choiceAnswer) {
+        if (currentSlide + 1 !== questions.length) {
+            currentSlide.value++
+        }
+        if (isCorrectAnswers){
+          numberOfCorrectAnswers += 1
+        }
+        choiceAnswer = null
+      }
+    }
 
-      currentSlideData.value = questions[currenSlide.value].questionTitle
+    const choiceAnswerHandler = function(answer){
+      if (answer === choiceAnswer) {
+        return null
+      }
+
+      choiceAnswer = answer
+      for (let i = 0; questions[currentSlide.value].asks.length > i; i++) {
+        if (questions[currentSlide.value]['asks'][i].id === answer) {
+          if (questions[currentSlide.value]['asks'][i].correct) {
+            isCorrectAnswers = true
+          }
+        }
+      }
     }
     return {
       questions,
+      currentSlide,
       currentSlideData,
+      choiceAnswerHandler,
       handleToggleSlide
     }
   }
