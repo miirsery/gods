@@ -159,7 +159,12 @@ export default defineComponent({
 </script>
 <style scoped lang="scss">
 .questions {
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
   &__button {
     position: absolute;
     bottom: 2%;
@@ -178,6 +183,13 @@ export default defineComponent({
     @media screen and (max-width: 500px) {
       width: 250px;
       height: 55px;
+    }
+
+    @media screen and (max-width: 375px) {
+      width: 100%;
+      height: 60px;
+      position: relative;
+      top: 90%;
     }
   }
 }
