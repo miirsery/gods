@@ -22,11 +22,14 @@
           <div class="result-view__title">
             Над сайтом работали:
           </div>
-          <div class="d-flex ai-center jc-between w-100">
-            <div class="d-flex fd-column ai-center ta-center">
-              <div class="result-view__member-image">
-                <img src="../assets/images/result/kuriyama.jpg" alt="image">
-              </div>
+          <div
+              class="d-flex ai-center jc-between w-100"
+              :class="winnerWidth <= 500 ? 'fd-column' : ''"
+          >
+            <div class="d-flex fd-column ai-center ta-center"
+             :class="winnerWidth <= 500 ? 'pb-12 bb-1 mb-12' : ''"
+            >
+             <p class="result-view__work">Back-end</p>
               <div class="result-view__member-name">
                 Андрей Голубев
               </div>
@@ -42,10 +45,10 @@
                 </div>
               </div>
             </div>
-            <div class="d-flex fd-column ai-center ta-center">
-              <div class="result-view__member-image">
-                <img src="../assets/images/result/komi.jpg" alt="image">
-              </div>
+            <div class="d-flex fd-column ai-center ta-center"
+             :class="winnerWidth <= 500 ? 'pb-12 bb-1 mb-12' : ''"
+            >
+              <p class="result-view__work">Front-end</p>
               <p class="result-view__member-name">
                 Александр Никифоров
               </p>
@@ -61,10 +64,10 @@
                 </div>
               </div>
             </div>
-            <div class="d-flex fd-column ai-center ta-center">
-              <div class="result-view__member-image">
-                <img src="../assets/images/result/Komi-san-2.png" alt="image">
-              </div>
+            <div class="d-flex fd-column ai-center ta-center"
+             :class="winnerWidth <= 500 ? 'pb-12 bb-1 mb-12' : ''"
+            >
+              <p class="result-view__work">Designer</p>
               <p class="result-view__member-name">
                 Евгений Голуб
               </p>
@@ -101,7 +104,8 @@ export default {
         60: "Пойдёт",
         50: "Не очень",
         0: "Ты старался :)"
-      }
+      },
+      winnerWidth: null
     }
   },
 
@@ -111,8 +115,13 @@ export default {
     },
     whoAreYou() {
       return this.position[Math.ceil(this.result / 10) * 10]
-    }
+    },
   },
+  mounted() {
+    window.addEventListener('resize', () => {
+      this.winnerWidth = window.innerWidth
+    })
+  }
 }
 </script>
 
@@ -196,14 +205,31 @@ export default {
       font-size: 26px;
       line-height: 130%;
       letter-spacing: 0.05em;
-      color: #FFFFFF;
+      color: #F2C94C;
       margin-bottom: 30px;
+
+      @media screen and (max-width: 500px) {
+        font-size: 18px;
+      }
     }
   }
 
   &__social {
     &:not(:last-child) {
       margin-right: 36px;
+    }
+  }
+
+  &__work {
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    color: #FEFEFE;
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 500px) {
+      font-size: 18px;
+      line-height: 1.1;
     }
   }
 }

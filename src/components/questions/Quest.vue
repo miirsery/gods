@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style scoped>
-  .question {
-    cursor: pointer;
-  }
+.question {
+  cursor: pointer;
+}
 </style>

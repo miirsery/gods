@@ -174,6 +174,11 @@ export default defineComponent({
     text-align: center;
     background: #BB6BD9;
     transform: translateX(-50%);
+
+    @media screen and (max-width: 500px) {
+      width: 250px;
+      height: 55px;
+    }
   }
 }
 </style>

@@ -347,6 +347,10 @@ const renderFraction = (swiper, current, total) => {
     right: 5%;
     bottom: 2.6%;
     z-index: 10;
+
+    @media screen and (max-width: 500px) {
+      bottom: 10.6%;
+    }
   }
 
   &__slide {
@@ -373,6 +377,12 @@ const renderFraction = (swiper, current, total) => {
         letter-spacing: 0.05em;
         color: #FFFFFF;
         margin-bottom: 50px;
+
+        @media screen and (max-width: 500px) {
+          font-size: 14px;
+          line-height: 1.1;
+          margin-bottom: 20px;
+        }
       }
     }
 
@@ -387,10 +397,26 @@ const renderFraction = (swiper, current, total) => {
         font-size: 24px;
         line-height: 130%;
       }
+
+      @media screen and (max-width: 500px) {
+        font-size: 12px;
+        line-height: 1.1;
+
+        span {
+          font-size: 12px;
+          line-height: 1.1;
+        }
+      }
     }
 
     &-info {
       max-width: 50%;
+
+      @media screen and (max-width: 500px) {
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 30px;
+      }
     }
 
     &-video {
@@ -416,8 +442,13 @@ const renderFraction = (swiper, current, total) => {
     }
 
     &-video-small {
+      height: 600px;
       @media screen and (max-height: 670px) {
         height: 400px;
+      }
+
+      @media screen and (max-width: 500px) {
+        height: 300px;
       }
 
       img {
@@ -426,6 +457,12 @@ const renderFraction = (swiper, current, total) => {
         border-radius: 32px;
         object-fit: cover;
       }
+    }
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      justify-content: center !important;
+      padding: 0 35px;
     }
   }
 
@@ -445,7 +482,7 @@ const renderFraction = (swiper, current, total) => {
     }
   }
 
-  &__arrow-prev{
+  &__arrow-prev {
     right: 20%;
     position: absolute;
     bottom: 2%;
@@ -464,6 +501,12 @@ const renderFraction = (swiper, current, total) => {
       pointer-events: none;
       background: center/ cover no-repeat url('../assets/images/arrow.svg');
       transform: rotate(180deg);
+    }
+
+    @media screen and (max-width: 500px) {
+      left: 5%;
+      right: auto;
+      bottom: 10%;
     }
   }
 
@@ -485,6 +528,10 @@ const renderFraction = (swiper, current, total) => {
       right: 0;
       pointer-events: none;
       background: center/ cover no-repeat url('../assets/images/arrow.svg');
+    }
+
+    @media screen and (max-width: 500px) {
+      bottom: 10%;
     }
   }
 
@@ -513,6 +560,7 @@ const renderFraction = (swiper, current, total) => {
     }
   }
 }
+
 .frigga {
   height: 100%;
   overflow-y: auto;
