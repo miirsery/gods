@@ -7,10 +7,10 @@
               Результаты опроса
             </div>
             <div class="result-view__total">
-              <span>{{result}}%</span> | 100%
+              <span>{{$store.state.numberOfCorrectAnswers}}</span> | {{$store.state.totalCountQuestions}}
             </div>
             <div class="result-view__congratulations">
-              Поздравляю! <br> Вы прошли курс о Богах скандинавской мифологии <br> Ваш рейтинг: <span>{{whoAreYou}}</span>
+              Поздравляю! <br> Вы прошли курс о Богах скандинавской мифологии <br> Ваш рейтинг: <span>{{position[$store.state.numberOfCorrectAnswers]}}</span>
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@
       <div class="h-50 d-flex fd-column ai-center ta-center mt-resp-80 ">
         <div class="result-view__container w-100">
           <div class="result-view__title">
-            Над сайтом работали:
+            Над проектом работали:
           </div>
           <div
               class="d-flex ai-center jc-between w-100"
@@ -29,58 +29,43 @@
             <div class="d-flex fd-column ai-center ta-center"
              :class="winnerWidth <= 500 ? 'pb-12 bb-1 mb-12' : ''"
             >
-             <p class="result-view__work">Back-end</p>
               <div class="result-view__member-name">
-                Андрей Голубев
+                Андрей Падерин
               </div>
               <div class="d-flex ai-center">
-                <div class="result-view__social">
-                  <img src="../assets/icons/instagram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
+                <a class="result-view__social" href="https://vk.com/s1vemod" target="_blank">
+                  <img src="../assets/icons/vk.svg" alt="image">
+                </a>
+                <a class="result-view__social" href="https://t.me/s1veme" target="_blank">
                   <img src="../assets/icons/telegram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
+                </a>
+                <a class="result-view__social" href="https://github.com/s1veme/" target="_blank">
                   <img src="../assets/icons/github.svg" alt="image">
-                </div>
+                </a>
               </div>
             </div>
             <div class="d-flex fd-column ai-center ta-center"
              :class="winnerWidth <= 500 ? 'pb-12 bb-1 mb-12' : ''"
             >
-              <p class="result-view__work">Front-end</p>
               <p class="result-view__member-name">
-                Александр Никифоров
+                Александр Малеев
               </p>
               <div class="d-flex ai-center">
-                <div class="result-view__social">
-                  <img src="../assets/icons/instagram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
-                  <img src="../assets/icons/telegram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
-                  <img src="../assets/icons/github.svg" alt="image">
-                </div>
+                <a class="result-view__social" href="https://vk.com/id548065126" target="_blank">
+                  <img src="../assets/icons/vk.svg" alt="image">
+                </a>
               </div>
             </div>
             <div class="d-flex fd-column ai-center ta-center"
              :class="winnerWidth <= 500 ? 'pb-12 bb-1 mb-12' : ''"
             >
-              <p class="result-view__work">Designer</p>
               <p class="result-view__member-name">
-                Евгений Голуб
+                Дмитрий Матюхин
               </p>
               <div class="d-flex ai-center">
-                <div class="result-view__social">
-                  <img src="../assets/icons/instagram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
-                  <img src="../assets/icons/telegram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
-                  <img src="../assets/icons/behance.svg" alt="image">
-                </div>
+                <a class="result-view__social" href="https://vk.com/dddead_inssside" target="_blank">
+                  <img src="../assets/icons/vk.svg" alt="image">
+                </a>
               </div>
             </div>
           </div>
@@ -97,26 +82,20 @@ export default {
   data() {
     return {
       position: {
-        100: "vue-разработчик",
-        90: "Лучший(-ая)",
-        80: "Хорошо",
-        70: "Почти хорошо",
-        60: "Пойдёт",
-        50: "Не очень",
-        0: "Ты старался :)"
+        8: "Вы Один - всеотец. Легенды не лгали, перед нами настоящий мудрец",
+        7: "Вы Тор - бог грома. Почесть надо заслужить, за отличное прохождение теста, вы заслужили её",
+        6: "Вы Тюр - бог войны. Решать исход битв у вас получается куда лучше, чем проходить тесты",
+        5: "Вы Вали - бог мести. Только не мстите нам за тест, он не такой уж и трудный",
+        4: "Вы Фригга - королева Асгарда. Вы и вправду обладаете силой пророчества, вы же как-то набрали половину баллов",
+        3: "Вы Фрейр - бог плодородия. Солнце всегда светит над вами, но с тестом вы справились посредственно",
+        2: "Вы Ньерд - бог моря. Видимо, кроме моряков вам никто и ничто не нужно",
+        1: "Вы Форсети - бог справедливости. О вас мало, что известно, но вы существуете",
+        0: "Это фиаско...",
       },
-      winnerWidth: null
+      winnerWidth: window.innerWidth
     }
   },
 
-  computed: {
-    result() {
-      return Math.ceil((this.$store.state.numberOfCorrectAnswers / this.$store.state.totalCountQuestions) * 100)
-    },
-    whoAreYou() {
-      return this.position[Math.ceil(this.result / 10) * 10]
-    },
-  },
   mounted() {
     window.addEventListener('resize', () => {
       this.winnerWidth = window.innerWidth
@@ -215,6 +194,15 @@ export default {
   }
 
   &__social {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     &:not(:last-child) {
       margin-right: 36px;
     }
