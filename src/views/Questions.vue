@@ -21,85 +21,212 @@ export default defineComponent({
     const questions = [
       {
         id: 1,
-        questionTitle: 'quest',
-        title: 'Вопрос1 тут прям тут',
+        title: 'Как звали самого почитаемого Бога?',
         asks: [
           {
             id: 1,
-            value: 'Какой-то ответ 1',
+            value: 'Тор',
             correct: true,
           },
           {
             id: 2,
-            value: 'Какой-то ответ 2!',
+            value: 'Один',
             correct: false,
           },
           {
             id: 3,
-            value: 'Какой-то ответ 3',
+            value: 'Хеймдалль',
             correct: false,
           },
           {
             id: 4,
-            value: 'Какой-то ответ 4',
+            value: 'Видар',
             correct: false,
           }
         ]
       },
       {
         id: 2,
-        questionTitle: 'quest1',
-        title: 'Вопрос2 тут прям тут',
+        title: 'Кого изображают, как странника и мудреца?',
         asks: [
           {
             id: 1,
-            value: 'Какой-то ответ 1',
-            correct: true,
+            value: 'Вали',
+            correct: false,
           },
           {
             id: 2,
-            value: 'Какой-то ответ 2',
+            value: 'Бальдар',
             correct: false,
           },
           {
             id: 3,
-            value: 'Какой-то ответ 3',
+            value: 'Тюр',
             correct: false,
           },
           {
             id: 4,
-            value: 'Какой-то ответ 4',
-            correct: false,
+            value: 'Один',
+            correct: true,
           }
         ]
       },
       {
         id: 3,
-        questionTitle: 'quest2',
-        title: 'Вопрос3 тут прям тут',
+        title: 'Как называлась дорога в небесное царство, хранителем которой является Хеймдалль?',
         asks: [
           {
             id: 1,
-            value: 'Какой-то ответ 1',
-            correct: true,
-          },
-          {
-            id: 2,
-            value: 'Какой-то ответ 2',
+            value: 'Пфубист',
             correct: false,
           },
           {
+            id: 2,
+            value: 'Биврест',
+            correct: true,
+          },
+          {
             id: 3,
-            value: 'Какой-то ответ 3',
+            value: 'Кенгхен',
             correct: false,
           },
           {
             id: 4,
-            value: 'Какой-то ответ 4',
+            value: 'Лгеност',
             correct: false,
           }
         ]
-      }
+      },
+      {
+        id: 4,
+        title: 'Посейдон или же аквамен, только в скандинавии...',
+        asks: [
+          {
+            id: 1,
+            value: 'Фригга',
+            correct: false,
+          },
+          {
+            id: 2,
+            value: 'Фрейр',
+            correct: false,
+          },
+          {
+            id: 3,
+            value: 'Ньерд',
+            correct: true,
+          },
+          {
+            id: 4,
+            value: 'Браги',
+            correct: false,
+          }
+        ]
+      },
+      {
+        id: 5,
+        title: 'Королева Асгарда и просто красивая женщина...',
+        asks: [
+          {
+            id: 1,
+            value: 'Фемида',
+            correct: false,
+          },
+          {
+            id: 2,
+            value: 'Артемида',
+            correct: false,
+          },
+          {
+            id: 3,
+            value: 'Фригга',
+            correct: true,
+          },
+          {
+            id: 4,
+            value: 'Афина',
+            correct: false,
+          }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Кто так любил лыжи и стрелять из лука?',
+        asks: [
+          {
+            id: 1,
+            value: 'Улль',
+            correct: true,
+          },
+          {
+            id: 2,
+            value: 'Один',
+            correct: false,
+          },
+          {
+            id: 3,
+            value: 'Ньерд',
+            correct: false,
+          },
+          {
+            id: 4,
+            value: 'Фригга',
+            correct: false,
+          }
+        ]
+      },
+      {
+        id: 7,
+        title: 'Назовите имена двух сыновей Одина, матерями которым являлись разные великанши.',
+        asks: [
+          {
+            id: 1,
+            value: 'Ньерд и Браги',
+            correct: false,
+          },
+          {
+            id: 2,
+            value: 'Фрейр  и Бальдар',
+            correct: false,
+          },
+          {
+            id: 3,
+            value: 'Тор и Тюр',
+            correct: false,
+          },
+          {
+            id: 4,
+            value: 'Вали и Видар',
+            correct: true,
+          }
+        ]
+      },
+      {
+        id: 8,
+        title: 'Бог войны и судьбоносец всех войнов...',
+        asks: [
+          {
+            id: 1,
+            value: 'Тор',
+            correct: false,
+          },
+          {
+            id: 2,
+            value: 'Тюр',
+            correct: true,
+          },
+          {
+            id: 3,
+            value: 'Вали',
+            correct: false,
+          },
+          {
+            id: 4,
+            value: 'Один',
+            correct: false,
+          }
+        ]
+      },
     ]
     const store = useStore()
 
