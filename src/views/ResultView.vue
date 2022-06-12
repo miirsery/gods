@@ -1,19 +1,22 @@
 <template>
   <div class="result-view">
     <div class="result-view">
-      <div class="h-50 d-flex fd-column ai-center border-bottom pb-resp-80">
+      <div class="h-50 d-flex fd-column ai-center border-bottom pb-resp-80" v-if="$store.state.isPassedTest">
         <div class="result-view__container w-100 ta-center">
             <div class="result-view__title mt-resp-80">
               Результаты опроса
             </div>
             <div class="result-view__total">
-              <span>78%</span> | 100%
+              <span>{{result}}%</span> | 100%
             </div>
             <div class="result-view__congratulations">
-              Поздравляю! <br> Вы прошли курс о Богах скандинавской мифологии <br> Ваш рейтинг: <span>СИЛАЧ</span>
+              Поздравляю! <br> Вы прошли курс о Богах скандинавской мифологии <br> Ваш рейтинг: <span>{{whoAreYou}}</span>
             </div>
           </div>
         </div>
+      <div v-else class="result-view__error">
+        <h1 class="result-view__title">Вы ещё не прошли тест &#128579;</h1>
+      </div>
       <div class="h-50 d-flex fd-column ai-center ta-center mt-resp-80 ">
         <div class="result-view__container w-100">
           <div class="result-view__title">
@@ -84,8 +87,33 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script>
+export default {
+  name: "results",
 
+  data() {
+    return {
+      position: {
+        100: "vue-разработчик",
+        90: "Лучший(-ая)",
+        80: "Хорошо",
+        70: "Почти хорошо",
+        60: "Пойдёт",
+        50: "Не очень",
+        0: "Ты старался :)"
+      }
+    }
+  },
+
+  computed: {
+    result() {
+      return Math.ceil((this.$store.state.numberOfCorrectAnswers / this.$store.state.totalCountQuestions) * 100)
+    },
+    whoAreYou() {
+      return this.position[Math.ceil(this.result / 10) * 10]
+    }
+  },
+}
 </script>
 
 <style scoped lang="scss">
@@ -95,6 +123,12 @@
   &__container {
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  &__error {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 300px;
   }
 
   &__title {

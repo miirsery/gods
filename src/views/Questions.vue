@@ -1,16 +1,17 @@
 <template>
   <div class="questions">
     <quest @choiceAnswerHandler="choiceAnswerHandler" :dataQuestion="questions[currentSlide]" :countQuestions="questions.length"/>
-    <button v-if="currentSlide + 1 === questions.length" class="questions__button">
+    <button v-if="currentSlide + 1 === questions.length" class="questions__button" @click="handlerResults">
       <router-link style="color: #FFFFFF;" to="/results">Сдать работу</router-link>
     </button>
     <button v-else class="questions__button" @click="handleToggleSlide">Продолжить</button>
   </div>
-  {{questions.length}} {{currentSlide}}
 </template>
 
 <script>
 import {defineAsyncComponent, defineComponent, reactive, ref} from "vue";
+import { useStore } from 'vuex'
+
 export default defineComponent({
   components: {
     quest: defineAsyncComponent(() => import(`@/components/questions/Quest.vue`)),
@@ -100,6 +101,7 @@ export default defineComponent({
         ]
       }
     ]
+    const store = useStore()
 
     const currentSlide = ref(0)
     const currentSlideData = questions[currentSlide]
@@ -127,18 +129,29 @@ export default defineComponent({
       choiceAnswer = answer
       for (let i = 0; questions[currentSlide.value].asks.length > i; i++) {
         if (questions[currentSlide.value]['asks'][i].id === answer) {
-          if (questions[currentSlide.value]['asks'][i].correct) {
-            isCorrectAnswers = true
-          }
+          isCorrectAnswers = !!questions[currentSlide.value]['asks'][i].correct
         }
       }
     }
+
+    const handlerResults = () => {
+      if (isCorrectAnswers && choiceAnswer){
+        console.log('HELLo')
+        numberOfCorrectAnswers += 1
+      }
+
+      store.commit('SET_NUMBER_OF_CORRECT_ANSWERS', numberOfCorrectAnswers)
+      store.commit('SET_IS_PASSED_TEST', true)
+      store.commit('SET_TOTAL_COUNT_QUESTIONS', questions.length)
+    }
+
     return {
       questions,
       currentSlide,
       currentSlideData,
       choiceAnswerHandler,
-      handleToggleSlide
+      handleToggleSlide,
+      handlerResults
     }
   }
 })
