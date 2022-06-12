@@ -20,7 +20,7 @@
       <div class="h-50 d-flex fd-column ai-center ta-center mt-resp-80 ">
         <div class="result-view__container w-100">
           <div class="result-view__title">
-            Над сайтом работали:
+            Над проектом работали:
           </div>
           <div
               class="d-flex ai-center jc-between w-100"
@@ -29,58 +29,43 @@
             <div class="d-flex fd-column ai-center ta-center"
              :class="winnerWidth <= 500 ? 'pb-12 bb-1 mb-12' : ''"
             >
-             <p class="result-view__work">Back-end</p>
               <div class="result-view__member-name">
-                Андрей Голубев
+                Андрей Падерин
               </div>
               <div class="d-flex ai-center">
-                <div class="result-view__social">
-                  <img src="../assets/icons/instagram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
+                <a class="result-view__social" href="https://vk.com/s1vemod" target="_blank">
+                  <img src="../assets/icons/vk.svg" alt="image">
+                </a>
+                <a class="result-view__social" href="https://t.me/s1veme" target="_blank">
                   <img src="../assets/icons/telegram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
+                </a>
+                <a class="result-view__social" href="https://github.com/s1veme/" target="_blank">
                   <img src="../assets/icons/github.svg" alt="image">
-                </div>
+                </a>
               </div>
             </div>
             <div class="d-flex fd-column ai-center ta-center"
              :class="winnerWidth <= 500 ? 'pb-12 bb-1 mb-12' : ''"
             >
-              <p class="result-view__work">Front-end</p>
               <p class="result-view__member-name">
-                Александр Никифоров
+                Александр Малеев
               </p>
               <div class="d-flex ai-center">
-                <div class="result-view__social">
-                  <img src="../assets/icons/instagram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
-                  <img src="../assets/icons/telegram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
-                  <img src="../assets/icons/github.svg" alt="image">
-                </div>
+                <a class="result-view__social" href="https://vk.com/id548065126" target="_blank">
+                  <img src="../assets/icons/vk.svg" alt="image">
+                </a>
               </div>
             </div>
             <div class="d-flex fd-column ai-center ta-center"
              :class="winnerWidth <= 500 ? 'pb-12 bb-1 mb-12' : ''"
             >
-              <p class="result-view__work">Designer</p>
               <p class="result-view__member-name">
-                Евгений Голуб
+                Дмитрий Матюхин
               </p>
               <div class="d-flex ai-center">
-                <div class="result-view__social">
-                  <img src="../assets/icons/instagram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
-                  <img src="../assets/icons/telegram.svg" alt="image">
-                </div>
-                <div class="result-view__social">
-                  <img src="../assets/icons/behance.svg" alt="image">
-                </div>
+                <a class="result-view__social" href="https://vk.com/dddead_inssside" target="_blank">
+                  <img src="../assets/icons/vk.svg" alt="image">
+                </a>
               </div>
             </div>
           </div>
@@ -209,6 +194,15 @@ export default {
   }
 
   &__social {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     &:not(:last-child) {
       margin-right: 36px;
     }
