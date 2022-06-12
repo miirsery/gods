@@ -16,14 +16,7 @@
         }"
           class="main-slider swiper"
       >
-        <swiper-slide class="main-slider__slide fd-column">
-          <div class="main-slider__slide-text">Название бога</div>
-          <div class="main-slider__slide-video">
-          <span>
-          </span>
-            <img src="../assets/images/slide-1.jpg" alt="mugik">
-          </div>
-        </swiper-slide>
+
         <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
           <div class="main-slider__slide-info">
             <div class="main-slider__slide-text-italic">
@@ -38,81 +31,223 @@
             </div>
           </div>
           <div class="main-slider__slide-video-small">
-            <img src="../assets/images/video-2.jpg" alt="strong mugik">
+            <img src="../assets/images/goods/odin.png" alt="strong mugik">
           </div>
         </swiper-slide>
-        <swiper-slide class="frigga">
-          <div class="frigga__wrapper">
-            <div class="main-slider__slide-text frigga__title">
-              Frigga
-            </div>
-            <swiper
-              class="frigga__slider"
-              :slidesPerView="3"
-              :loopFillGroupWithBlank="true"
-              :spaceBetween="60"
-              :navigation="{
-                 nextEl: '.frigga-arrow-next',
-                 prevEl: '.frigga-arrow-prev'
-              }"
-              >
-              <swiper-slide class="frigga__slide">
-                <img src="../assets/images/girl.jpg" alt="girl">
-              </swiper-slide>
-              <swiper-slide class="frigga__slide">
-                <img src="../assets/images/girl.jpg" alt="girl">
-              </swiper-slide>
-              <swiper-slide class="frigga__slide">
-                <img src="../assets/images/girl.jpg" alt="girl">
-              </swiper-slide>
-              <swiper-slide class="frigga__slide">
-                <img src="../assets/images/girl.jpg" alt="girl">
-              </swiper-slide>
-              <swiper-slide class="frigga__slide">
-                <img src="../assets/images/girl.jpg" alt="girl">
-              </swiper-slide>
-            </swiper>
-            <p class="frigga-text">
-              Фригг - жена Одина, чрезвычайно красивая, самая главная из богинь и королева Асгарда. Богиня любви и судьбы, описываемая как имеющая силу пророчества, но она не раскрывает того, что она знает.
-            </p>
-            <div class="frigga-navigation">
-              <div class="frigga-arrow-prev">
-                <img src="../assets/images/arrow-right.svg" alt="arrow">
-              </div>
-              <div class="frigga-arrow-next">
-                <img src="../assets/images/arrow-right.svg"  alt="arrow">
-              </div>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide class="main-slider__slide d-flex ai-center jc-between odin">
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
           <div class="main-slider__slide-info">
             <div class="main-slider__slide-text-italic">
-              Один Всеотец - правитель Асгарда.
+              Тор - <br> младший сын Одина.
             </div>
             <div class="main-slider__slide-title">
             <span>
-             Óðinn
+              Þórr
             </span>
               <br>
-              <ul class="odin__menu">
-                <li class="odin__item">
-                  Текст или факт какой то Текст или факт какой то Текст или факт какой тоТекст или факт какой то
-                </li>
-                <li class="odin__item">
-                  Текст или факт какой то Текст или факт какой то Текст или факт какой тоТекст или факт какой то
-                </li>
-                <li class="odin__item">
-                  Текст или факт какой то Текст или факт какой то Текст или факт какой тоТекст или факт какой то
-                </li>
-                <li class="odin__item">
-                  Текст или факт какой то Текст или факт какой то Текст или факт какой тоТекст или факт какой то
-                </li>
-              </ul>
+              Тор - младший сын Одина и второй самый могущественный бог. Он бог грома, хозяин погоды и самый сильный воин.
             </div>
           </div>
           <div class="main-slider__slide-video-small">
-            <img src="../assets/images/big-mugik.jpg" alt="big mugik">
+            <img src="../assets/images/goods/tor.png" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Бальдар - <br> бог, который ассоциируется со светом.
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Baldr
+            </span>
+              <br>
+              Бальдар – бог, который ассоциируется со светом, красотой, любовью и счастьем.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/goods/baldar.png" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Видар - <br> сын Одина.
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Víðarr
+            </span>
+              <br>
+              Видар - сын Одина и великанши Грид, бог мщения и безмолвия.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/goods/vidar.png" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Вали - <br> сын Одина.
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Váli
+            </span>
+              <br>
+              Вали – сын Одина и великанши Ринд, бог мести. Еще будучи ребенком он в возрасте одного дня отомстил Хёду за убийство Бальдра.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/goods/vali.png" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Браги - <br> бог-скальд.
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Brage
+            </span>
+              <br>
+              Браги – бог-скальд, очень мудрый и красноречивый, является богом поэзии и прозы.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/goods/bragi.png" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Хеймдалль - <br> хранитель Биврёста.
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Heimdallr
+            </span>
+              <br>
+              Хеймдалль - является хранителем Биврёста, который является главной дорогой в небесное царство.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/video-2.jpg" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Тюр - <br> бог войны.
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Tyr
+            </span>
+              <br>
+              Тюр - бог войны и только он решает, кто победит в битвах.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/goods/tur.jpg" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Ньёрд
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Njorðr
+            </span>
+              <br>
+              Ньёрд - бог моря и моряков.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/goods/nyrd.png" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Фрейр - <br> бог плодородия.
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Freyr
+            </span>
+              <br>
+              Фрейр - бог плодородия. Фрей ассоциируется с мужественностью и процветанием, с солнечным светом и хорошей погодой.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/goods/freir.png" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Улль - <br> сын Сив и пасынок Тора.
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Ullr
+            </span>
+              <br>
+              Улль - сын Сив и пасынок Тора. «Улль» означает «почетный», и он был лучшим из всех лучников и лыжников..
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/goods/yll.jpg" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Форсети
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Forseti
+            </span>
+              <br>
+              Форсети - бог справедливости.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/goods/forsety.png" alt="strong mugik">
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="main-slider__slide d-flex ai-center jc-between">
+          <div class="main-slider__slide-info">
+            <div class="main-slider__slide-text-italic">
+              Фригг - <br> жена Одина.
+            </div>
+            <div class="main-slider__slide-title">
+            <span>
+              Frigga
+            </span>
+              <br>
+              Фригг - жена Одина, чрезвычайно красивая, самая главная из богинь и королева Асгарда. Богиня любви и судьбы, описываемая как имеющая силу пророчества, но она не раскрывает того, что она знает.
+            </div>
+          </div>
+          <div class="main-slider__slide-video-small">
+            <img src="../assets/images/goods/frigg.png" alt="strong mugik">
           </div>
         </swiper-slide>
       </swiper>
