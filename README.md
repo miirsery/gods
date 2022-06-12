@@ -15,5 +15,8 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Deploy
+```
+docker build -t gods-frontend .
+docker run -d -it -p 80:80 --rm --name gods-frontend gods-frontend
+```
