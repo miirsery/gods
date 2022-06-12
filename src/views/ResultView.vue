@@ -54,6 +54,9 @@
                 <a class="result-view__social" href="https://vk.com/id548065126" target="_blank">
                   <img src="../assets/icons/vk.svg" alt="image">
                 </a>
+                <a class="result-view__social" href="https://t.me/FrozZzy1" target="_blank">
+                  <img src="../assets/icons/telegram.svg" alt="image">
+                </a>
               </div>
             </div>
             <div class="d-flex fd-column ai-center ta-center"
