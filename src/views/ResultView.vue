@@ -109,7 +109,7 @@ export default {
         10: "Это фиаско...",
         0: "Это фиаско..."
       },
-      winnerWidth: null
+      winnerWidth: window.innerWidth
     }
   },
 
